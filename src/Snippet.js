@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { duotoneLight as theme } from 'react-syntax-highlighter/dist/styles/prism'
+import { hopscotch as theme } from 'react-syntax-highlighter/dist/styles/prism'
 import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
@@ -12,6 +12,7 @@ import withStyles from '@material-ui/core/styles/withStyles'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import SnippetTags from './SnippetTags'
 import CopyToClipboard from 'react-copy-to-clipboard'
+import SnippetModal from './SnippetModal'
 
 import Icon from '@material-ui/core/Icon'
 import { Divider } from '@material-ui/core'
@@ -52,15 +53,8 @@ const styles = theme => ({
     display: 'flex',
     flexDirection: 'column'
   },
-  cardMedia: {
-    paddingTop: '56.25%' // 16:9
-  },
   cardContent: {
     flexGrow: 1
-  },
-  footer: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing.unit * 6
   }
 })
 
@@ -130,12 +124,11 @@ class Snipper extends Component {
                       Copy
                     </Button>
                   </CopyToClipboard>
-                  <Button size="small" variant="outlined" color="primary">
-                    View
-                  </Button>
+                  <SnippetModal snippet={snippet}/>
                   <Button size="small"  variant="outlined" color="secondary">
                     Edit
                   </Button>
+
                 </CardActions>
               </Card>
             </Grid>

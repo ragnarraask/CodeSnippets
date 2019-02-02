@@ -6,6 +6,7 @@ import withStyles from '@material-ui/core/styles/withStyles'
 import './App.css'
 
 import Snippet from './Snippet'
+<<<<<<< HEAD
 import Footer from './Footer';
 import Header from './Header';
 import Hero from './Hero';
@@ -28,6 +29,11 @@ const styles = theme => ({
     flexGrow: 1
   },
 })
+=======
+import Footer from './Footer'
+import Header from './Header'
+
+>>>>>>> 6f0a9ed854830b0f9bb1360139c4c60d31a44e37
 
 class App extends Component {
   render(props) {
@@ -37,7 +43,7 @@ class App extends Component {
       <React.Fragment>
         <CssBaseline />
         <Header />
-        <Hero />
+        
         <main className="main">
           <Snippet classes={classes} />
         </main>
