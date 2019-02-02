@@ -68,26 +68,9 @@ const editorStyle = {
 }
 
 class Snipper extends Component {
-  constructor() {
-    super()
-
-    this.state = {
-      snippets: [],
-      isLoading: true
-    }
-  }
-
-  componentDidMount() {
-    fetch(
-      'http://192.168.1.124:8080/api/collections/get/snippets?token=84588594ba67fc351bd6d464bb6b3a'
-    )
-      .then(response => response.json())
-      .then(data => this.setState({ snippets: data.entries, isLoading: false }))
-  }
-
   render() {
-    const { snippets, isLoading } = this.state
-    const { classes } = this.props
+
+    const { classes, filteredSnippets, isLoading } = this.props
 
     if (isLoading) {
       return <CircularProgress />
@@ -96,8 +79,8 @@ class Snipper extends Component {
       <div className={classNames(classes.layout, classes.cardGrid)}>
         {/* End hero unit */}
         <Grid container spacing={40}>
-          {snippets.map(snippet => (
-            <Grid item key={snippet} sm={12} md={6} lg={4}>
+          {filteredSnippets.map((snippet, key) => (
+            <Grid item key={key} sm={12} md={6} lg={4}>
               <Card className={classes.card}>
                 <SyntaxHighlighter
                   language={snippet.language}
@@ -124,11 +107,10 @@ class Snipper extends Component {
                       Copy
                     </Button>
                   </CopyToClipboard>
-                  <SnippetModal snippet={snippet}/>
-                  <Button size="small"  variant="outlined" color="secondary">
+                  <SnippetModal snippet={snippet} />
+                  <Button size="small" variant="outlined" color="secondary">
                     Edit
                   </Button>
-
                 </CardActions>
               </Card>
             </Grid>

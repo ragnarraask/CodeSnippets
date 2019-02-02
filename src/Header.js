@@ -51,8 +51,11 @@ const styles = theme => ({
   }
 })
 
+
 const Header = props => {
   const { classes } = props
+
+
   return (
     <React.Fragment>
       <AppBar position="fixed" className={props.classes.appBar}>
@@ -65,6 +68,7 @@ const Header = props => {
               <Icon>search</Icon>
             </div>
             <InputBase
+              onKeyUp={props.filterSnippets}
               placeholder="Search…"
               classes={{
                 root: classes.inputRoot,

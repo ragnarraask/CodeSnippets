@@ -4,9 +4,9 @@ import Link from '@material-ui/core/Link'
 const SnippetTags = props => {
   return (
       <ul>
-        {props.tags.map(tag => (
-          <li>
-            <Link to="{tag}">{tag}</Link>
+        {props.tags.map((tag, id) => (
+          <li key={id}>
+            <Link to="{IDBCursortag}">{tag}</Link>
           </li>
         ))}
       </ul>
