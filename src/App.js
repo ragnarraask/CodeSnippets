@@ -5,7 +5,7 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import Snippet from './Snippet'
 import Footer from './Footer'
 import Header from './Header'
-import Hero from './Hero'
+
 
 class App extends Component {
   render(props) {
@@ -13,7 +13,7 @@ class App extends Component {
       <React.Fragment>
         <CssBaseline />
         <Header />
-        <Hero />
+        
         <main className="main">
           <Snippet />
         </main>

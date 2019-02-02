@@ -12,7 +12,8 @@ const styles = theme => ({
       heroContent: {
         maxWidth: 600,
         margin: '0 auto',
-        padding: `${theme.spacing.unit * 8}px 0 ${theme.spacing.unit * 6}px`
+        padding: `${theme.spacing.unit * 8}px 0 ${theme.spacing.unit * 4}px`,
+        paddingTop: `${theme.spacing.unit * 12}px`
       },
       heroButtons: {
         marginTop: theme.spacing.unit * 4
@@ -32,9 +33,9 @@ const styles = theme => ({
 const Hero = props => (
     <div className={props.classes.heroUnit}>
           <div className={props.classes.heroContent}>
-            <Typography component="h1" variant="h3" align="center" color="textPrimary" gutterBottom>
+            {/* <Typography component="h1" variant="h3" align="center" color="textPrimary" gutterBottom>
               ReactJS Academy Hackaton!
-            </Typography>
+            </Typography> */}
             <Typography variant="h6" align="center" color="textSecondary" paragraph>
               This is a simple code snippet collection app by  Martin/Ragnar/Paavel 👨‍💻
             </Typography>
