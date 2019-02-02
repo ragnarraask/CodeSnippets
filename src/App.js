@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Snippet from './Snippet';
+import AddSnippet from './AddSnippet';
 
 class App extends Component {
   render() {
@@ -10,9 +11,13 @@ class App extends Component {
         <header className="App-header">
          
           <p>
-            Share your best ReactJS snippet
+            Check out the best ReactJS snippet
           </p>
          <Snippet/>
+         <p>
+            Share your best ReactJS snippet
+          </p>
+         <AddSnippet/>
         </header>
       </div>
     );
