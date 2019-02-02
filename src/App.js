@@ -1,15 +1,13 @@
 import React, { Component } from 'react'
 import CssBaseline from '@material-ui/core/CssBaseline'
-import Typography from '@material-ui/core/Typography'
 import withStyles from '@material-ui/core/styles/withStyles'
 
 import './App.css'
 
 import Snippet from './Snippet'
-<<<<<<< HEAD
 import Footer from './Footer';
 import Header from './Header';
-import Hero from './Hero';
+
 
 
 const styles = theme => ({
@@ -29,21 +27,14 @@ const styles = theme => ({
     flexGrow: 1
   },
 })
-=======
-import Footer from './Footer'
-import Header from './Header'
-
->>>>>>> 6f0a9ed854830b0f9bb1360139c4c60d31a44e37
 
 class App extends Component {
   render(props) {
     const { classes } = this.props
-    console.log(props)
     return (
       <React.Fragment>
         <CssBaseline />
         <Header />
-        
         <main className="main">
           <Snippet classes={classes} />
         </main>
