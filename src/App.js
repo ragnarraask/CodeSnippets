@@ -75,9 +75,9 @@ class App extends Component {
         </AppBar>
         <div className={classes.heroUnit}>
           <div className={classes.heroContent}>
-            <Typography component="h1" variant="h3" align="center" color="textPrimary" gutterBottom>
+            {/* <Typography component="h1" variant="h3" align="center" color="textPrimary" gutterBottom>
             ReactJS Academy Hackaton!
-            </Typography>
+            </Typography> */}
             <Typography variant="h6" align="center" color="textSecondary" paragraph>
               This is a simple code snippet collection app by  Martin/Ragnar/Paavel 👨‍💻
             </Typography>
