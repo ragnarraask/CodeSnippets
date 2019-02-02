@@ -12,10 +12,10 @@ const styles = theme => ({
 const Footer = props => (
     <footer className={props.classes.footer}>
         <Typography variant="h6" align="center" gutterBottom>
-            Footer
+            React BootCamp
         </Typography>
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-            Something here to give the footer a purpose!
+            Building cool stuff!
         </Typography>
     </footer>
 )
