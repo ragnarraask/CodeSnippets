@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^3.9.1",
+    "fuzzysearch": "^1.0.3",
     "react": "^16.7.0",
     "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "^16.7.0",
