@@ -1,14 +1,12 @@
 import React, { Component } from 'react'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import withStyles from '@material-ui/core/styles/withStyles'
-
-import './App.css'
+import dummyData from './dummyData'
 
 import Snippet from './Snippet'
 import Footer from './Footer'
 import Header from './Header'
-import fuzzySearch from  'fuzzysearch'
-
+import fuzzySearch from 'fuzzysearch'
 
 const styles = theme => ({
   cardGrid: {
@@ -40,22 +38,33 @@ class App extends Component {
     this.filterSnippets = event => {
       const q = event.target.value.toLowerCase()
 
-      const filteredSnippets = this.state.snippets.filter(snippet => fuzzySearch(q, snippet.name.toLowerCase())
-
+      const filteredSnippets = this.state.snippets.filter(snippet =>
+        fuzzySearch(q, snippet.name.toLowerCase())
       )
       console.log(filteredSnippets)
       this.setState({ filteredSnippets })
     }
   }
   componentDidMount() {
-    fetch(
-      'http://192.168.1.124:8080/api/collections/get/snippets?token=84588594ba67fc351bd6d464bb6b3a'
-    )
-      .then(response => response.json())
-      .then(data => {
-        this.setState({ snippets: data.entries,  filteredSnippets: data.entries.reverse(), isLoading: false })
+    this.setState({
+      snippets: dummyData.entries,
+      filteredSnippets: dummyData.entries,
+      isLoading: false
+    })
 
-      })
+    // fetch(
+    //   'http://127.0.0.2:8080/api/collections/get/snippets?token=84588594ba67fc351bd6d464bb6b3a'
+    // )
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     this.setState({
+    //       snippets: data.entries,
+    //       filteredSnippets: data.entries.reverse(),
+    //       isLoading: false
+    //     })
+    //   })
+    //   .catch(error => ( alert(error))
+    //   )
   }
 
   render(props) {
